@@ -78,13 +78,13 @@
       </div>
     </section>
   </section>
+
   <section id="about" style="min-height: fit-content;">
     <section id="newsletter">
       <div class="container">
         <h1>This web-application helps you to <span style="color: #5288fd;">practice and improve </span> your speech!
         </h1>
         <form>
-          <!-- <input type="email" placeholder="Enter Email..."> -->
           <a style="text-decoration: none;" href="#app">
             <button class="button_1">TALK</button>
           </a>
@@ -114,7 +114,6 @@
               developer.mozilla.org </a>
           </p>
         </article>
-
         <aside id="sidebar">
           <img class="girlImg" src="img/female-professional (3).svg" alt="">
         </aside>
@@ -128,7 +127,6 @@
         <h1 style="line-height: 3rem;">Send us your <span style="color: #5288fd;"> Reviews </span> on our &nbsp; <a
             style="text-decoration: none;" href="mailto:nimishbhandari727521@gmail.com"> <button
               class="button_1">EMAIL</button>
-
           </a></h1>
       </div>
     </section>
@@ -141,29 +139,24 @@
               <h3>Speech Result</h3>
               <p class="content0">
               </p>
-
             </li>
             <li>
               <h3>Speech Result</h3>
               <p class="content1">
               </p>
-
             </li>
             <li>
               <h3>Speech Result</h3>
               <p class="content2">
               </p>
-
             </li>
             <li>
               <h3>Speech Result</h3>
               <p class="content3">
               </p>
-
             </li>
           </ul>
         </article>
-
         <aside id="sidebar">
           <div class="dark">
             <h3>Instructions</h3>
@@ -178,11 +171,8 @@
       </div>
     </section>
   </section>
-
-
-
   <footer>
-    <p>Designed by PROPrietor, AUG 2020</p>
+    <p>Designed by <a href="https://nimishbhandari.github.io/Portfolio/"></a> PROPrietor, AUG 2020</p>
   </footer>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -191,16 +181,13 @@
     let count = 0;
     let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     let recognition = new SpeechRecognition();
-
     recognition.onstart = function (event) {
       console.log("speak now.....");
     }
-
     recognition.onresult = function (event) {
       count++;
       console.log(event);
       result = event.results[0][0];
-
       for (i = count - 1; i < count; i++) {
         btn.innerHTML = "Start Test!";
         let content = document.querySelector('.content' + i);
@@ -208,32 +195,23 @@
           "<b>Result: </b>" + result
           .transcript + "<br><b>Confidence in speech : </b>" + Math.floor(result.confidence * 100) + "/100";
       }
-
       if (count == 4) {
         count = 0;
       }
-
       console.log(count);
     }
-
     btn.addEventListener('click', () => {
       btn.innerHTML = "Speak Now!";
       recognition.start();
     })
-
-
     $(document).ready(function () {
       $("a").on('click', function (event) {
-
         if (this.hash !== "") {
           event.preventDefault();
-
           var hash = this.hash;
-
           $('html, body').animate({
             scrollTop: $(hash).offset().top
           }, 800, function () {
-
             window.location.hash = hash;
           });
         }
